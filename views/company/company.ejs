@@ -1,0 +1,167 @@
+<% layout('layout2') %>
+
+<div id="wrapper">
+
+    <% include ../partials/sidebar %>
+
+
+    <div id="page-content-wrapper">
+      
+       <% include ../partials/navbar %>
+       
+        <div class="container-fluid main_body">
+              
+            <div class="ul_links">
+                <ul>
+                    <li><a href="/home">Home</a></li> |
+                    <li><a href="">Company</a></li> |
+                    <li><a href="#">Register Company</a></li>
+                </ul>
+            </div>
+            <br>
+           
+           
+            <div class="bodyDiv">
+                <% if(noErrors) {%>
+                    <div class="alert alert-success">
+                       <a href="#" class="close" data-dismiss="alert" aria-label="close">
+                           &times;
+                       </a>
+                       <%= success %>
+
+                    </div>
+                <% } %>
+               
+                <h4>Register Company</h4>
+                
+                <form method="POST" action="/company/create">
+
+                    <div class="form-group ">
+                        <label for="">Company Name</label>
+                        <span id="errorMsg1"></span>
+                        <input id="name" class="form-control" name="name" type="text" style="margin-bottom:20px;">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Address</label>
+                        <span id="errorMsg2"></span>
+                        <input id="address" class="form-control" name="address" type="text" style="margin-bottom:20px;">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">City</label>
+                        <span id="errorMsg3"></span>
+                        <input id="city" class="form-control" name="city" type="text" style="margin-bottom:20px;">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Country</label>
+                        <span id="errorMsg4"></span>
+                        <input id="country" class="form-control" name="country" type="text" style="margin-bottom:20px;">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Sector</label>
+                        <span id="errorMsg5"></span>
+                        <input id="sector" class="form-control" name="sector" type="text" style="margin-bottom:20px;">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Website</label>
+                        <span id="errorMsg6"></span>
+                        <input id="website" class="form-control" name="website" type="text" style="margin-bottom:20px;">
+                    </div>
+                    
+                    <div class="form-group ">
+                        <label for="">Company Image</label><br>
+                        
+                        <button class="btn btn-lg" type="button" data-toggle="modal" data-target="#file">Add File</button>
+                        <span id="completed"></span>
+                        
+                        <div id="file" class="modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
+                                        <div class="modal-title">Upload Image</div>
+                                    </div>
+                                    
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar"></div>
+                                            </div>
+                                            
+                                            <button class="btn btn-lg upload-btn" type="button">Upload File</button>
+                                            <input type="file" class="form-control" name="upload" id="upload-input" style="display:none">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" id="register" value="Register" class="form-control btn btn-primary" name="register" style="">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--<script src="/js/validate.js"></script>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

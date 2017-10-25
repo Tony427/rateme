@@ -1,0 +1,68 @@
+<% layout('layout2') %>
+
+
+<div id="wrapper">
+
+    <% include ../partials/sidebar %>
+
+    <div id="page-content-wrapper">
+        <% include ../partials/navbar %>
+        <div class="container-fluid main_body">
+			<div class="ul_links">
+	            <ul>
+	                <li><a href="/">Home</a></li> |
+	                <li><a href="#">Employee</a></li> |
+	                <li><a href="#">Messages</a></li>
+	            </ul>
+	        </div>
+
+            <div class="bodyDiv">
+				<h4 style="">Send Message</h4>
+
+				<input type="hidden" name="receiverId" id="receiverId" class="form-control" value="<%= data._id %>"><br>
+
+				<div class="msg">
+
+					<div class="">
+					    <div class="">
+					        <ul class="chat">
+					        <% chats.forEach(function(val){ %>
+								<li class="left clearfix"><span class="chat-img pull-left">
+									<img src="http://placehold.it/50/55C1E7/fff&amp;text=U" alt="User Avatar" class="img-circle">
+								</span>
+									<div class="chat-body clearfix">
+										<div class="header">
+											<strong class="primary-font"><%= val.userFromName %></strong>
+											<small class="pull-right ">
+												<span class=""></span><%= moment(val.createdAt).format('LT') %>
+											</small>
+										</div>
+										<p>
+											<%= val.body %>
+										</p>
+									</div>
+								</li>
+                            <% }) %>
+                            
+					        </ul>
+					    </div>
+					</div>
+
+				</div><br>
+
+				<div class="form-group ">
+					<textarea id="msg" name="message" class="form-control" placeholder="Enter message" rows="5" cols="60"></textarea>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" id="message" value="Send Message" class="form-control btn btn-primary" name="send">
+				</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/js/moment.js"></script>
+

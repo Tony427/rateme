@@ -1,0 +1,42 @@
+<% layout('layout2') %>
+
+
+<div id="wrapper">
+
+    <% include ../partials/sidebar %>
+
+    <div id="page-content-wrapper">
+        <% include ../partials/navbar %>
+        <div class="container-fluid main_body">
+			<div class="ul_links">
+	            <ul>
+	                <li><a href="/">Home</a></li> |
+	                <li><a href="/companies">Company</a></li> |
+	                <li><a href="#">Register Employee</a></li>
+	            </ul>
+	        </div>
+
+            <div class="bodyDiv">
+				<h4 style="">Register Employee</h4>
+
+	            <div class="form-group">
+	                <label for="">Company</label><br>
+	                <label><%= data.name %></label>
+	            </div>
+
+	            <form action="" method="post">
+	                <div class="form-group ">
+	                    <label for="">Role</label>
+	                    <input id="role" class="form-control" name="role" type="text" style="margin-bottom:20px;">
+	                </div>
+
+	                <div class="form-group">
+	                    <input type="submit" id="role" value="Register" class="form-control btn btn-primary" name="employeeRole" style="">
+	                </div>
+	            </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+

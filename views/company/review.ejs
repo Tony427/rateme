@@ -1,0 +1,68 @@
+<% layout('layout2') %>
+
+
+<div id="wrapper">
+
+    <% include ../partials/sidebar %>
+
+    <div id="page-content-wrapper">
+        <% include ../partials/navbar %>
+        <div class="container-fluid main_body">
+        <a href="/logout">Logout</a>
+			<div class="ul_links">
+	            <ul>
+	                <li><a href="/">Home</a></li> |
+	                <li><a href="/companies">Reviews</a></li> |
+	                <li><a href="#">Write Review</a></li>
+	            </ul>
+	        </div>
+
+            <div class="bodyDiv">
+				<h4 style="">Write Review</h4>
+                
+                <% if(hasMsg) {%>
+                    <div class="alert alert-success"><%= msg %></div>
+                <% }%>
+
+	            <form action="" method="post">
+	                <input class="form-control" id="id" value="<%= data._id %>" type="hidden">
+	                <div class="form-group ">
+	                    <label for="">Sending Company</label>
+	                    <input id="sender" class="form-control" name="sender" value="<%= user.company.name %>" type="text" style="margin-bottom:20px;">
+	                </div>
+
+	                <div class="form-group ">
+	                    <label for="">Receiving Company</label>
+	                    <input id="receiver" class="form-control" name="receiver" value="<%= data.name %>" type="text" style="margin-bottom:20px;">
+	                </div>
+
+	                <div class="form-group ">
+	                    <label for="">Rating</label>
+	                    <div class="col-sm-12" id="star_rating">
+	                        <img id="1_star" src="/images/star_off.png" alt="1" title="Bad">
+	                        <img id="2_star" src="/images/star_off.png" alt="2" title="Poor">
+	                        <img id="3_star" src="/images/star_off.png" alt="3" title="Fair">
+	                        <img id="4_star" src="/images/star_off.png" alt="4" title="Good">
+	                        <img id="5_star" src="/images/star_off.png" alt="5" title="Excellent">
+
+	                        <span id="showTitle"></span>
+	                    </div>
+
+	                </div>
+
+	                <div class="form-group ">
+	                    <label for="">Review</label>
+	                    <textarea name="review" id="review" rows="8" cols="80" class="form-control"></textarea>
+	                </div>
+
+	                <div class="form-group">
+	                    <input type="submit" id="rate" value="Create" class="form-control btn btn-primary" name="rate" style="">
+	                </div>
+	            </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,57 @@
+<% layout('layout2') %>
+
+<div id="wrapper">
+
+    <% include ../partials/sidebar %>
+
+    <div id="page-content-wrapper">
+        <% include ../partials/navbar %>
+        <div class="container-fluid main_body">
+			<div class="ul_links">
+	            <ul>
+	                <li><a href="/">Home</a></li> |
+	                <li><a href="/companies">Company</a></li> |
+	                <li><a href="#">Employees</a></li>
+	            </ul>
+	        </div>
+
+            <div class="bodyDiv">
+				<h4 style="">Company Employees</h4>
+            
+                <table class="table table-bordered">
+                   <thead>
+                       <tr>
+                           <th>Fullname</th>
+                           <th>Position</th>
+                           <th></th>
+                       </tr>
+                   </thead>
+                   
+                   <tbody>
+                       <% if(data.employees.length > 0) {%>
+                           <% data.employees.forEach(function(val){ %>
+                           
+                               <tr>
+                                   <td><%= val.employeeFullname %></td>
+                                   <td><%= val.employeeRole %></td>
+                                   <td><a href="/message/<%= val.employeeId %>" class="btn btn-primary">Send Message</a></td>
+                               </tr>
+                           
+                           <% }) %>
+                       <% } else {%>
+                           <tr>
+                               <td><p>No registered employee yet</p></td>
+                           </tr>
+                       <% } %>
+                   </tbody>
+                    
+                </table>
+	            
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
